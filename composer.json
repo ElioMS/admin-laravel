@@ -1,0 +1,13 @@
+{
+    "name": "ems/admin-laravel",
+    "description": "My first Composer project",
+    "authors": [
+        {
+            "name": "Elio G. Solis",
+            "email": "elio.garcia.solis@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    },
+}
