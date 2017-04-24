@@ -28,9 +28,9 @@
         <link href="public/plugins/toastr/toastr.min.css" rel="stylesheet" type="text/css"/>	
         	
         <!-- Theme Styles -->
-        <link href="public/css/modern.css" rel="stylesheet" type="text/css"/>
-        <link href="public/css/themes/white.css" class="theme-color" rel="stylesheet" type="text/css"/>
-        <link href="public/css/custom.css" rel="stylesheet" type="text/css"/>
+        <link href="public/ems/css/modern.css" rel="stylesheet" type="text/css"/>
+        <link href="public/ems/css/themes/white.css" class="theme-color" rel="stylesheet" type="text/css"/>
+        <link href="public/ems/css/custom.css" rel="stylesheet" type="text/css"/>
         
         <script src="public/plugins/3d-bold-navigation/js/modernizr.js"></script>
         <script src="public/plugins/offcanvasmenueffects/js/snap.svg-min.js"></script>
