@@ -8,6 +8,7 @@
         }
     ],
     "minimum-stability": "dev",
+    "version": "1.0",
     "prefer-stable" : true,
     "require": {
         "php": ">=5.6"
