@@ -21,12 +21,12 @@
         <ul class="menu accordion-menu">
         @foreach ($value as $element)
             @if ($element['type'] == 'simple')
-                <li class="active"><a href="index.html" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-{{ $element['ico'] }}"></span><p> {{ $element['text'] }} </p></a></li>
+                <li class="active"><a href="{{ route($element['url']) }}" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-{{ $element['ico'] }}"></span><p> {{ $element['text'] }} </p></a></li>
             @else
                 <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-{{ $element['ico'] }}"></span><p> {{ $element['text'] }} </p><span class="arrow"></span></a>
                     <ul class="sub-menu">
                     @foreach ($element['childs'] as $elem)
-                        <li><a href="table-static.html">{{ $elem['text'] }}</a></li>
+                        <li><a href="{{ route($elem['url']) }}">{{ $elem['text'] }}</a></li>
                     @endforeach 
                     </ul>
                 </li>
