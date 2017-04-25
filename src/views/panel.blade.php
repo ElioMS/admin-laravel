@@ -35,6 +35,14 @@
         <link rel="stylesheet" href="{{ asset('vendor/ems/css/custom.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/3d-bold-navigation/js/modernizr.js') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/offcanvasmenueffects/js/snap.svg-min.js') }}">
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+
+        <style>
+            .panel-body {
+                padding-top: 5px !important;
+            }
+        </style>
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -352,7 +360,11 @@
 	
 
         <!-- Javascripts -->
-        <script src="{{ asset('vendor/ems/plugins/jquery/jquery-2.1.3.min.js') }}"></script>
+        {{-- <script src="{{ asset('vendor/ems/plugins/jquery/jquery-2.1.3.min.js') }}"></script> --}}
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.js"
+          integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+          crossorigin="anonymous"></script>
         <script src="{{ asset('vendor/ems/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/pace-master/pace.min.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/jquery-blockui/jquery.blockui.js') }}"></script>
@@ -361,7 +373,7 @@
         <script src="{{ asset('vendor/ems/plugins/switchery/switchery.min.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/uniform/jquery.uniform.min.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/offcanvasmenueffects/js/classie.js') }}"></script>
-        <script src="{{ asset('vendor/ems/plugins/offcanvasmenueffects/js/main.js') }}"></script>
+        {{-- <script src="{{ asset('vendor/ems/plugins/offcanvasmenueffects/js/main.js') }}"></script> --}}
         <script src="{{ asset('vendor/ems/plugins/waves/waves.min.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/3d-bold-navigation/js/main.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/waypoints/jquery.waypoints.min.js') }}"></script>
@@ -375,9 +387,17 @@
         <script src="{{ asset('vendor/ems/plugins/flot/jquery.flot.tooltip.min.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/curvedlines/curvedLines.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/metrojs/MetroJs.min.js') }}"></script>
-
+        
         <script src="{{ asset('vendor/ems/js/modern.js') }}"></script>
         <script src="{{ asset('vendor/ems/js/pages/dashboard.js') }}"></script>
- 
+        
+        <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+        
+        <script>
+            $('#table').DataTable();
+        </script>
+
+        @yield('scripts')
     </body>
 </html>
