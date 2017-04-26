@@ -120,7 +120,7 @@ $( document ).ready(function() {
     
     // Uniform
     var checkBox = $("input[type=checkbox]:not(.switchery), input[type=radio]:not(.no-uniform)");
-    if (checkBox.size() > 0) {
+    if (checkBox.length > 0) {
         checkBox.each(function() {
             $(this).uniform();
         });
@@ -473,17 +473,17 @@ $( document ).ready(function() {
         closeRight2 = document.getElementById( 'closeRight2' ),
         body = document.body;
     
-    showRight.onclick = function() {
-        classie.toggle( menuRight, 'cbp-spmenu-open' );
-    };
+    // showRight.onclick = function() {
+    //     classie.toggle( menuRight, 'cbp-spmenu-open' );
+    // };
     
-    closeRight.onclick = function() {
-        classie.toggle( menuRight, 'cbp-spmenu-open' );
-    };
+    // closeRight.onclick = function() {
+    //     classie.toggle( menuRight, 'cbp-spmenu-open' );
+    // };
     
-    closeRight2.onclick = function() {
-        classie.toggle( menuRight2, 'cbp-spmenu-open' );
-    };
+    // closeRight2.onclick = function() {
+    //     classie.toggle( menuRight2, 'cbp-spmenu-open' );
+    // };
     
     $('.showRight2').click(function() {
         classie.toggle( menuRight2, 'cbp-spmenu-open' );

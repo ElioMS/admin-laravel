@@ -358,7 +358,7 @@
         </nav>
         <div class="cd-overlay"></div>
 	
-
+        @include('adminems::modal')
         <!-- Javascripts -->
         {{-- <script src="{{ asset('vendor/ems/plugins/jquery/jquery-2.1.3.min.js') }}"></script> --}}
         <script
@@ -389,14 +389,34 @@
         <script src="{{ asset('vendor/ems/plugins/metrojs/MetroJs.min.js') }}"></script>
         
         <script src="{{ asset('vendor/ems/js/modern.js') }}"></script>
+        <script src="{{ asset('vendor/ems/js/custom.js') }}"></script>
         <script src="{{ asset('vendor/ems/js/pages/dashboard.js') }}"></script>
         
+        <script src="/vendor/laravel-filemanager/js/lfm.js"></script>
+
+        <script>
+             $('#lfm').filemanager('image');
+        </script>
+    
         <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
         
         <script>
             $('#table').DataTable();
+
+            $(document).on('click', '.preview-flm' ,function() {
+                var nombreImagen = $(this).data('name');
+                path = nombreImagen;
+
+                $("#modal-image").find('img').attr('src', path);
+
+                setTimeout(function(){
+                  $('#modal-image').show();
+                },0);
+            });
         </script>
+
+
 
         @yield('scripts')
     </body>
