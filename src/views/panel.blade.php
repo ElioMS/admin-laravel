@@ -15,6 +15,7 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/pace-master/themes/blue/pace-theme-flash.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/uniform/css/uniform.default.min.css') }}">
+        {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --}}
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/bootstrap/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/fontawesome/css/font-awesome.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/line-icons/simple-line-icons.css') }}">
@@ -28,7 +29,8 @@
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/toastr/toastr.min.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/metrojs/MetroJs.min.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/toastr/toastr.min.css') }}">
-        	
+        {{-- <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/datatables/css/jquery.datatables.min.css') }}">  --}}
+        {{-- <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/datatables/css/jquery.datatables_themeroller.css') }}">  --}}
         <!-- Theme Styles -->
         <link rel="stylesheet" href="{{ asset('vendor/ems/css/modern.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/css/themes/blue.css') }}">
@@ -38,10 +40,17 @@
 
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
 
+        
         <style>
-            .panel-body {
-                padding-top: 5px !important;
-            }
+        .has-error .control-label,
+        .has-error .help-block,
+        .has-error .form-control-feedback {
+            color: #EA2C2C !important;
+        }
+
+        .panel-body {
+            padding-top: 10px !important;
+        }
         </style>
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -330,6 +339,11 @@
         <script src="{{ asset('vendor/ems/js/modern.js') }}"></script>
         <script src="{{ asset('vendor/ems/js/custom.js') }}"></script>
         <script src="{{ asset('vendor/ems/js/pages/dashboard.js') }}"></script>
+
+        {{-- <script src="{{ asset('vendor/ems/plugins/datatables/js/jquery.datatables.min.js') }}"></script> --}}
+        {{-- <script src="{{ asset('vendor/ems/js/pages/table-data.js') }}"></script> --}}
+
+   
         
         <script src="/vendor/laravel-filemanager/js/lfm.js"></script>
 
