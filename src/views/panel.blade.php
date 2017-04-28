@@ -356,9 +356,12 @@
         <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
         
         <script>
-            $('#table').DataTable({
-                "order": []
-            });
+            setTimeout(function(){
+                $('#table').DataTable({
+                    "order": []
+                }); 
+            }, 100);
+            
 
             $(document).on('click', '.preview-flm' ,function() {
                 var nombreImagen = $(this).data('name');
