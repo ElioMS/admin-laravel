@@ -22,6 +22,8 @@ class AdminLaravelServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/config/sidebar.php' => config_path('sidebar.php'),
         ]);
+
+        $this->loadMigrationsFrom(__DIR__.'/migrations');
     }
 
     /**
