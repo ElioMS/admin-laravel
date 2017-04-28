@@ -307,6 +307,7 @@
         <div class="cd-overlay"></div>
 	
         @include('adminems::modal')
+        @include('adminems::delete')
         <!-- Javascripts -->
         {{-- <script src="{{ asset('vendor/ems/plugins/jquery/jquery-2.1.3.min.js') }}"></script> --}}
         <script
