@@ -5,7 +5,7 @@
 		
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<h2 class="panel-title"> Categories </h2>
+				<h2 class="panel-title"> Seo </h2>
 			</div>
 
 			<div class="panel-body">
