@@ -33,7 +33,12 @@
         {{-- <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/datatables/css/jquery.datatables_themeroller.css') }}">  --}}
         <!-- Theme Styles -->
         <link rel="stylesheet" href="{{ asset('vendor/ems/css/modern.css') }}">
-        <link rel="stylesheet" href="{{ asset('vendor/ems/css/themes/blue.css') }}">
+        @if (Auth::user()->role->code == 1)
+            <link rel="stylesheet" href="{{ asset('vendor/ems/css/themes/blue.css') }}">
+            @else
+            <link rel="stylesheet" href="{{ asset('vendor/ems/css/themes/red.css') }}">
+        @endif
+        
         <link rel="stylesheet" href="{{ asset('vendor/ems/css/custom.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/3d-bold-navigation/js/modernizr.js') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/offcanvasmenueffects/js/snap.svg-min.js') }}">
@@ -201,16 +206,25 @@
                                 </li> --}}
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown">
-                                        <span class="user-name">David<i class="fa fa-angle-down"></i></span>
+                                        <span class="user-name">
+                                        @if (Auth::check())
+                                             {{ Auth::user()->name }} - Rol: {{ Auth::user()->role->name }}
+                                        @endif
+                                       
+                                        <i class="fa fa-angle-down"></i></span>
                                         <img class="img-circle avatar" src="assets/images/avatar1.png" width="40" height="40" alt="">
                                     </a>
                                     <ul class="dropdown-menu dropdown-list" role="menu">
                                         <li role="presentation"><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li>
-                                        <li role="presentation"><a href="calendar.html"><i class="fa fa-calendar"></i>Calendar</a></li>
-                                        <li role="presentation"><a href="inbox.html"><i class="fa fa-envelope"></i>Inbox<span class="badge badge-success pull-right">4</span></a></li>
-                                        <li role="presentation" class="divider"></li>
-                                        <li role="presentation"><a href="lock-screen.html"><i class="fa fa-lock"></i>Lock screen</a></li>
-                                        <li role="presentation"><a href="login.html"><i class="fa fa-sign-out m-r-xs"></i>Log out</a></li>
+                                        {{-- <li role="presentation"><a href="calendar.html"><i class="fa fa-calendar"></i>Calendar</a></li>
+                                        <li role="presentation"><a href="inbox.html"><i class="fa fa-envelope"></i>Inbox<span class="badge badge-success pull-right">4</span></a></li> --}}
+                                        {{-- <li role="presentation" class="divider"></li> --}}
+                                        {{-- <li role="presentation"><a href="lock-screen.html"><i class="fa fa-lock"></i>Lock screen</a></li> --}}
+                                        <li role="presentation"><a onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> <i class="fa fa-sign-out m-r-xs"></i>Log out</a></li>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
                                     </ul>
                                 </li>
                               {{--   <li>
@@ -228,7 +242,12 @@
                     </div>
                 </div>
             </div><!-- Navbar -->
-            @include('adminems::sidebar')
+            @if (Auth::user()->role->code == 1)
+                    @include('adminems::sidebar')
+                @else
+                {{-- expr --}}
+            @endif
+            
             <!-- Page Sidebar -->
             <div class="page-inner">
                 <div class="page-title">
