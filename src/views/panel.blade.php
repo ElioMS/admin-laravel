@@ -209,13 +209,16 @@
                                         <span class="user-name">
                                         @if (Auth::check())
                                              {{ Auth::user()->name }} - Rol: {{ Auth::user()->role->name }}
-                                        @endif
+                                        
                                        
-                                        <i class="fa fa-angle-down"></i></span>
-                                        <img class="img-circle avatar" src="assets/images/avatar1.png" width="40" height="40" alt="">
+                                            <i class="fa fa-angle-down"></i></span>
+                                            @if (Auth::user()->image)
+                                                <img class="img-circle avatar" src="{{ asset(Auth::user()->image) }}" width="40" height="40" alt="">
+                                            @endif
+                                        @endif
                                     </a>
                                     <ul class="dropdown-menu dropdown-list" role="menu">
-                                        <li role="presentation"><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li>
+                                        <li role="presentation"><a href="{{ route('user.profile') }}"><i class="fa fa-user"></i>Profile</a></li>
                                         {{-- <li role="presentation"><a href="calendar.html"><i class="fa fa-calendar"></i>Calendar</a></li>
                                         <li role="presentation"><a href="inbox.html"><i class="fa fa-envelope"></i>Inbox<span class="badge badge-success pull-right">4</span></a></li> --}}
                                         {{-- <li role="presentation" class="divider"></li> --}}
