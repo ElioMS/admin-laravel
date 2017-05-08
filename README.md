@@ -1,18 +1,26 @@
 # Admin-laravel
-## Admin laravel package
+## Support
 
 * Laravel support version: 5.3 & 5.4
 * PHP support version: >=5.4
 
+## Commands 
+
 * Run all migrations (IMPORTANT)
-php artisan migrate
+
+    php artisan migrate
 
 * To publish config files
-php artisan vendor:publish --tag=config
+
+  php artisan vendor:publish --tag=config
 
 * To publish assets
-php artisan vendor:publish --tag=public --force
+
+  php artisan vendor:publish --tag=public --force
+
+## Contact
 
 * [Github](https://github.com/ElioMS/admin-laravel)
 * [Packagist](https://packagist.org/packages/emgs/admin-emgs-laravel)
-Contact: elio.garcia.solis@gmail.com
+
+* [GMAIL](elio.garcia.solis@gmail.com) - [Facebook](facebook.com)
