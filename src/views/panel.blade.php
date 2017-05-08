@@ -52,7 +52,9 @@
         .has-error .form-control-feedback {
             color: #EA2C2C !important;
         }
-
+        .has-error .help-text {
+            color: #737373 !important;
+        }
         .panel-body {
             padding-top: 10px !important;
         }

@@ -12,14 +12,16 @@
 				<table id="table" class="display table table-hover dataTable">
 					<thead>
 						<th> Path </th>
-						{{-- <th> Created at </th>
-						<th> Image </th> --}}
+						<th> Título </th>
+						<th> Descripción </th>
 					</thead>
 
 					<tbody>
 						@foreach ($routes as $element)
 							<tr data-id="{{ $element->id }}">
-								<td> {{ $element->path }} </td>	
+								<td> <a href="{{ route('seo.edit' , ['id' => $element->id]) }}"> {{ $element->path }} </a> </td>	
+								<td> {{ $element->title }} </td>
+								<td> {{ $element->description }} </td>
 							</tr>
 						@endforeach
 						
@@ -29,4 +31,8 @@
 		</div>
 
 	</div>
+@stop
+
+@section('scripts')
+	@include('adminems::success')
 @stop

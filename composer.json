@@ -1,6 +1,6 @@
 {
     "name": "emgs/admin-emgs-laravel",
-    "description": "My first Composer project",
+    "description": "My laravel admin project",
     "authors": [
         {
             "name": "Elio G. Solis",
