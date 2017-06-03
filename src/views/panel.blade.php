@@ -43,6 +43,7 @@
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/3d-bold-navigation/js/modernizr.js') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/offcanvasmenueffects/js/snap.svg-min.js') }}">
 
+        <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/colorpicker/bootstrap-colorpicker.css') }}">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
 
         
@@ -70,7 +71,7 @@
     <body class="page-header-fixed">
         <div class="overlay"></div>
      
-        <div class="menu-wrap">
+     {{--    <div class="menu-wrap">
             <nav class="profile-menu">
                 <div class="profile"><img src="assets/images/avatar1.png" width="52" alt="David Green"/><span>David Green</span></div>
                 <div class="profile-menu-list">
@@ -81,7 +82,7 @@
                 </div>
             </nav>
             <button class="close-button" id="close-button">Close Menu</button>
-        </div>
+        </div> --}}
 {{--         <form class="search-form" action="#" method="GET">
             <div class="input-group">
                 <input type="text" name="search" class="form-control search-input" placeholder="Search...">
@@ -107,15 +108,15 @@
                     <div class="topmenu-outer">
                         <div class="top-menu">
                             <ul class="nav navbar-nav navbar-left">
-                                <li>		
+                                <li>        
                                     <a href="javascript:void(0);" class="waves-effect waves-button waves-classic sidebar-toggle"><i class="fa fa-bars"></i></a>
                                 </li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                              {{--   <li>	
+                              {{--   <li>   
                                     <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
                                 </li> --}}
-                                <li class="dropdown">
+                               {{--  <li class="dropdown">
                                     <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown"><i class="fa fa-envelope"></i><span class="badge badge-success pull-right">4</span></a>
                                     <ul class="dropdown-menu title-caret dropdown-lg" role="menu">
                                         <li><p class="drop-title">You have 4 new  messages !</p></li>
@@ -173,7 +174,7 @@
                                         </li>
                                         <li class="drop-all"><a href="#" class="text-center">All Messages</a></li>
                                     </ul>
-                                </li>
+                                </li> --}}
                               {{--   <li class="dropdown">
                                     <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown"><i class="fa fa-bell"></i><span class="badge badge-success pull-right">3</span></a>
                                     <ul class="dropdown-menu title-caret dropdown-lg" role="menu">
@@ -329,7 +330,7 @@
             </ul>
         </nav>
         <div class="cd-overlay"></div>
-	
+    
         @include('adminems::modal')
         @include('adminems::delete')
         <!-- Javascripts -->
@@ -367,9 +368,8 @@
 
         {{-- <script src="{{ asset('vendor/ems/plugins/datatables/js/jquery.datatables.min.js') }}"></script> --}}
         {{-- <script src="{{ asset('vendor/ems/js/pages/table-data.js') }}"></script> --}}
-
-   
         
+        <script src="{{ asset('vendor/ems/plugins/colorpicker/bootstrap-colorpicker.js') }}"></script>
         <script src="/vendor/laravel-filemanager/js/lfm.js"></script>
 
         <script>
