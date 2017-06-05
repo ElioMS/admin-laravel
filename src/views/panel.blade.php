@@ -211,22 +211,32 @@
                                     <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown">
                                         <span class="user-name">
                                         @if (Auth::check())
-                                             {{ Auth::user()->name }} - Rol: {{ Auth::user()->role->name }}
+                                             {{ Auth::user()->name }} {{-- - Rol: {{ Auth::user()->role->name }} --}}
                                         
                                        
                                             <i class="fa fa-angle-down"></i></span>
                                             @if (Auth::user()->image)
                                                 <img class="img-circle avatar" src="{{ asset(Auth::user()->image) }}" width="40" height="40" alt="">
+                                                @else
+                                                <img class="img-circle avatar" src="{{ asset('user-icon.png') }}" width="40" height="40" alt="">
                                             @endif
                                         @endif
                                     </a>
                                     <ul class="dropdown-menu dropdown-list" role="menu">
-                                        <li role="presentation"><a href="{{ route('user.profile') }}"><i class="fa fa-user"></i>Profile</a></li>
+                                        @php
+                                            $value = config('app.show_profile');
+                                        @endphp
+                                        
+                                        @if ($value == 1)
+                                             <li role="presentation"><a href="{{ route('user.profile') }}"><i class="fa fa-user"></i>Profile</a></li>
+                                        @endif
+
+                                       <li role="presentation"><a href=""> <i class="fa fa-unlock-alt"></i> Cambiar contraseña </a> </li>
                                         {{-- <li role="presentation"><a href="calendar.html"><i class="fa fa-calendar"></i>Calendar</a></li>
                                         <li role="presentation"><a href="inbox.html"><i class="fa fa-envelope"></i>Inbox<span class="badge badge-success pull-right">4</span></a></li> --}}
                                         {{-- <li role="presentation" class="divider"></li> --}}
                                         {{-- <li role="presentation"><a href="lock-screen.html"><i class="fa fa-lock"></i>Lock screen</a></li> --}}
-                                        <li role="presentation"><a onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> <i class="fa fa-sign-out m-r-xs"></i>Log out</a></li>
+                                        <li role="presentation"><a onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> <i class="fa fa-sign-out m-r-xs"></i> Desconectarse </a></li>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
