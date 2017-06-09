@@ -43,3 +43,40 @@
 .modal-content {
     top: 100px !important;
 }
+
+
+.group-img-input {
+  border: 1px solid #d1d1d1;
+  margin-bottom: 10px;
+  padding-top: 15px;
+}
+
+.btn-custom {
+  color: #333;
+  background-color: #f8f8f8;
+  border-color: #ccc;
+}
+
+.btn-custom:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #ccc;
+}
+
+.btn-cstm-primary {
+  color: #fff !important;
+  background-color: #337ab7;
+  border-color: 1px solid transparent;
+}
+
+.btn.btn-cstm-primary:hover {
+  color: #fff !important;
+  background-color: #326c9e;
+  text-decoration: none;
+}
+
+.float-elements a {
+  color: #ccc !important;
+  float: right;
+  padding-right: 8px;
+}

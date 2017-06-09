@@ -6,67 +6,67 @@ $( document ).ready(function() {
         time: 1000
     });
     
-    setTimeout(function() {
-        toastr.options = {
-            closeButton: true,
-            progressBar: true,
-            showMethod: 'fadeIn',
-            hideMethod: 'fadeOut',
-            timeOut: 5000
-        };
-        toastr.success('Checkout settings menu on left!', 'Welcome to Modern!');
-    }, 1800);
+    // setTimeout(function() {
+    //     toastr.options = {
+    //         closeButton: true,
+    //         progressBar: true,
+    //         showMethod: 'fadeIn',
+    //         hideMethod: 'fadeOut',
+    //         timeOut: 5000
+    //     };
+    //     toastr.success('Checkout settings menu on left!', 'Welcome to Modern!');
+    // }, 1800);
     
     var flot2 = function () {
 
-		// We use an inline data source in the example, usually data would
-		// be fetched from a server
+        // We use an inline data source in the example, usually data would
+        // be fetched from a server
 
-		var data = [],
-			totalPoints = 100;
+        var data = [],
+            totalPoints = 100;
         
-		function getRandomData() {
+        function getRandomData() {
 
-			if (data.length > 0)
-				data = data.slice(1);
+            if (data.length > 0)
+                data = data.slice(1);
 
-			// Do a random walk
+            // Do a random walk
 
-			while (data.length < totalPoints) {
+            while (data.length < totalPoints) {
 
-				var prev = data.length > 0 ? data[data.length - 1] : 50,
-					y = prev + Math.random() * 10 - 5;
+                var prev = data.length > 0 ? data[data.length - 1] : 50,
+                    y = prev + Math.random() * 10 - 5;
 
-				if (y < 0) {
-					y = 0;
-				} else if (y > 100) {
-					y = 100;
-				}
+                if (y < 0) {
+                    y = 0;
+                } else if (y > 100) {
+                    y = 100;
+                }
 
-				data.push(y);
-			}
+                data.push(y);
+            }
 
-			// Zip the generated y values with the x values
+            // Zip the generated y values with the x values
 
-			var res = [];
-			for (var i = 0; i < data.length; ++i) {
-				res.push([i, data[i]])
-			}
+            var res = [];
+            for (var i = 0; i < data.length; ++i) {
+                res.push([i, data[i]])
+            }
 
-			return res;
-		}
+            return res;
+        }
 
-		var plot2 = $.plot("#flotchart2", [ getRandomData() ], {
-			series: {
-				shadowSize: 0	// Drawing is faster without shadows
-			},
-			yaxis: {
-				min: 0,
-				max: 100
-			},
-			xaxis: {
-				show: false
-			},
+        var plot2 = $.plot("#flotchart2", [ getRandomData() ], {
+            series: {
+                shadowSize: 0   // Drawing is faster without shadows
+            },
+            yaxis: {
+                min: 0,
+                max: 100
+            },
+            xaxis: {
+                show: false
+            },
             colors: ["#22BAA0"],
             legend: {
                 show: false
@@ -82,16 +82,16 @@ $( document ).ready(function() {
                 content: "Y: %y",
                 defaultTheme: false
             }
-		});
+        });
 
-		function update() {
-			plot2.setData([getRandomData()]);
+        function update() {
+            plot2.setData([getRandomData()]);
 
-			plot2.draw();
-			setTimeout(update, 30);
-		}
+            plot2.draw();
+            setTimeout(update, 30);
+        }
 
-		update();
+        update();
         
     };
     

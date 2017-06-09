@@ -7,7 +7,7 @@
         
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta charset="UTF-8">
-        <meta name="description" content="Admin Dashboard Template" />
+        <meta name="description" content="Admin Dashboard Template"/>
         <meta name="keywords" content="admin,dashboard" />
 {{--         <meta name="author" content="Steelcoders" /> --}}
         
@@ -100,7 +100,7 @@
                         </a>
                     </div>
                     <div class="logo-box">
-                        <a href="{{ route('panel') }}" class="logo-text"><span> ADM </span></a>
+                        <a href="{{ route('panel') }}" class="logo-text"><span> {{ config('app.site_name') }} </span></a>
                     </div><!-- Logo Box -->
                     <div class="search-button">
                         <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
@@ -376,11 +376,10 @@
         <script src="{{ asset('vendor/ems/js/custom.js') }}"></script>
         <script src="{{ asset('vendor/ems/js/pages/dashboard.js') }}"></script>
 
-        {{-- <script src="{{ asset('vendor/ems/plugins/datatables/js/jquery.datatables.min.js') }}"></script> --}}
-        {{-- <script src="{{ asset('vendor/ems/js/pages/table-data.js') }}"></script> --}}
-        
+        <script src="{{ asset('vendor/ems/plugins/ckeditor/ckeditor.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/colorpicker/bootstrap-colorpicker.js') }}"></script>
-        <script src="/vendor/laravel-filemanager/js/lfm.js"></script>
+
+        <script src="{{ asset('vendor/ems/js/lfm.js') }}"></script>
 
         <script>
              $('#lfm').filemanager('image');

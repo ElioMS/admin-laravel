@@ -73,3 +73,15 @@ $('.f-delete').on('click', function() {
 });
 
       
+$(document).on('click', ".delete-flm" , function(e) {
+    var delete_selector = $(this).closest('.imagen-array');
+    delete_selector.find('input').val('');
+    delete_selector.find('.title-image-flm').text('');
+    delete_selector.find('.preview-flm').remove();
+    $(this).remove();
+});
+
+$(document).on('click', '.icon-trash', function(e) {
+    $(this).closest('.group-img-input.row').remove()
+    console.log('aaaa')
+});
