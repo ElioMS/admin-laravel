@@ -382,7 +382,7 @@
         <script src="{{ asset('vendor/ems/js/lfm.js') }}"></script>
 
         <script>
-             $('#lfm').filemanager('image');
+             $('.fm-button').filemanager('image');
         </script>
     
         <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
