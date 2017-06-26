@@ -83,5 +83,4 @@ $(document).on('click', ".delete-flm" , function(e) {
 
 $(document).on('click', '.icon-trash', function(e) {
     $(this).closest('.group-img-input.row').remove()
-    console.log('aaaa')
 });
