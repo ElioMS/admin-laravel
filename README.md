@@ -1,8 +1,8 @@
 # Admin-laravel
 ## Support
 
-* Laravel support version: 5.3 & 5.4
-* PHP support version: >=5.4
+* Laravel: 5.3 & 5.4
+* PHP: >=5.6
 
 ## Commands 
 
