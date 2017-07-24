@@ -1,5 +1,4 @@
-
-//Para ocultar el flash session
+//Para ocultar el session flash
 $(document).ready(function(){
     var positiveMessage = $('.alert-success');
     var existsPossitiveMessage = positiveMessage.length;
@@ -11,10 +10,10 @@ $(document).ready(function(){
 
 // Enviar formulario
 $("#submit-btn").on('click' , function(){
-  $("#admin-form").submit();
+    $("#admin-form").submit();
 });
 
-//Cerrar modal
+//Cerrar modal preview imágenes
 $("#modal-regresar").on('click', function() {
     $("#modal-image").hide();
 });
@@ -28,8 +27,8 @@ $('.input-fecha').datepicker({
 });
 
 $(".date-button-adm").on('click', function(e){
-  e.preventDefault();
-  $(".ui-datepicker-trigger").click();
+    e.preventDefault();
+    $(".ui-datepicker-trigger").click();
 });
 
 $(document).ready(function(e) {
@@ -68,11 +67,41 @@ $(document).ready(function(e) {
     });
 });
 
-$('.f-delete').on('click', function() {
-  $('#form-delete-detail').submit();
+$(function() {
+    //f == formulario, entonces f-delete corresponde al formulario para eliminar un registro y f-password al de cambiar contraseña
+    $('.f-delete').on('click', function() {
+        $('#form-delete-detail').submit();
+    });
+
+    $('#f-password').click(function(e) {
+        e.preventDefault();
+        var token = $('input[name="_token"]').val(); 
+        var formulario = $("#f-change-password");
+        var form  = formulario.serialize();
+        
+        var request = $.post("/admin/change-password" , form);
+
+        request.done(function(response) {
+            var alert = $('.password-alert');
+            alert.show();
+
+            if (response.state) {
+                alert.removeClass('alert-danger');
+                alert.addClass('alert-success');
+                alert.text(response.message)
+                alert.delay('2000').fadeOut('slow/5000/fast');
+                formulario[0].reset();
+            } else {
+                alert.removeClass('alert-success');
+                alert.addClass('alert-danger');
+                alert.text(response.message);
+                formulario[0].reset();
+            }
+        });
+    })
 });
 
-      
+//Eliminar selección de imágenes 
 $(document).on('click', ".delete-flm" , function(e) {
     var delete_selector = $(this).closest('.imagen-array');
     delete_selector.find('input').val('');

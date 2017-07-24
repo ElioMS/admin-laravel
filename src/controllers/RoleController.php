@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Ems\AdminEms\controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 use App\Role;
 
@@ -17,7 +17,7 @@ class RoleController extends Controller
     public function index()
     {
         $roles = Role::All();
-        return view('admin.role.index', compact('roles'));
+        return view('adminems::role.index', compact('roles'));
     }
 
     /**

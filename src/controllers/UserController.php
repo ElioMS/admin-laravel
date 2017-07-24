@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Ems\AdminEms\controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 use App\Admin;
 
@@ -21,12 +21,13 @@ class UserController extends Controller
             $q->where('code' , '!=' , $id);
         })->get();
         // dd($users);
-        return view('admin.user.index', compact('users'));
+        return view('adminems::user.index', compact('users'));
     }
 
-    public function profile() {
+    public function profile() 
+    {
         if (\Auth::user()) {
-            return view('admin.user.profile');
+            return view('adminems::user.profile');
         } else {
             return false;
         }
@@ -55,6 +56,38 @@ class UserController extends Controller
         session()->flash('success' , 'Perfil actualizado!');
         return redirect()->route('user.profile');
 
+    }
+
+    public function changePassword(Request $request) 
+    {
+        if (\Auth::user()) {
+
+            if ($request->ajax()) {
+                //Valores del usuario administrador conectado 
+                $actual_password = \Auth::user()->password;
+                $actual_id = \Auth::user()->id;
+
+                if (password_verify(request('actual_password') , $actual_password)) {
+
+                    $validator = \Validator::make($request->all(), [
+                        'new_password' => 'required|confirmed',
+                        'new_password_confirmation' => 'required'
+                    ]);
+
+                    if ($validator->passes()) {
+                        $user = Admin::find($actual_id);
+                        $user->password = bcrypt(request('new_password'));
+                        $user->save();
+                        return response()->json(['state' => true , 'message' => 'Contraseña actualizada!']);
+                    } else {
+                        return response()->json(['state' => false , 'message' => 'Verificar la confirmación de la nueva contraseña!']);
+                    }
+                } 
+                else {
+                    return response()->json(['state' => false , 'message' => 'La contraseña actual no coincide!']);
+                }
+            }
+        }
     }
 
     /**
