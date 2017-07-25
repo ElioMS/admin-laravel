@@ -45,7 +45,8 @@
 
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/colorpicker/bootstrap-colorpicker.css') }}">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css">
+        
         
         <style>
         .has-error .control-label,
@@ -57,7 +58,7 @@
             color: #737373 !important;
         }
         .panel-body {
-            padding-top: 10px !important;
+            padding-top: 20px !important;
         }
         </style>
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -266,7 +267,7 @@
             
             <!-- Page Sidebar -->
             <div class="page-inner">
-                <div class="page-title">
+                {{-- <div class="page-title">
                     <h3>Dashboard</h3>
                     <div class="page-breadcrumb">
                         <ol class="breadcrumb">
@@ -274,7 +275,7 @@
                             <li class="active">Dashboard</li>
                         </ol>
                     </div>
-                </div>
+                </div> --}}
                 <div id="main-wrapper">
                     @yield('content')
                 </div><!-- Main Wrapper -->
@@ -295,6 +296,8 @@
           integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
           crossorigin="anonymous"></script>
         <script src="{{ asset('vendor/ems/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.es.min.js"></script>
         <script src="{{ asset('vendor/ems/plugins/pace-master/pace.min.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/jquery-blockui/jquery.blockui.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/bootstrap/js/bootstrap.min.js') }}"></script>

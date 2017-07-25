@@ -80,3 +80,32 @@
   float: right;
   padding-right: 8px;
 }
+
+.password-alert {
+  display: none;
+}
+
+.required {
+    color: #FD4848;
+}
+
+.datepicker table tr td.active:active, 
+.datepicker table tr td.active.highlighted:active, 
+.datepicker table tr td.active.active, 
+.datepicker table tr td.active.highlighted.active {
+     background-color: #12afcb !important;
+}
+
+.datepicker table tr td span.active:active, 
+.datepicker table tr td span.active:hover:active, 
+.datepicker table tr td span.active.disabled:active, 
+.datepicker table tr td span.active.disabled:hover:active, 
+.datepicker table tr td span.active.active, 
+.datepicker table tr td span.active:hover.active, 
+.datepicker table tr td span.active.disabled.active, 
+.datepicker table tr td span.active.disabled:hover.active {
+    color: #fff;
+    background-color: #12afcb !important;
+    border-color: #12afcb;
+}
+
