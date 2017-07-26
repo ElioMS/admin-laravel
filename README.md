@@ -18,9 +18,11 @@
 
   php artisan vendor:publish --tag=public --force
 
-## Contact
+## Project
 
 * [Github](https://github.com/ElioMS/admin-laravel)
 * [Packagist](https://packagist.org/packages/emgs/admin-emgs-laravel)
+
+## Contact
 
 * [Gmail](elio.garcia.solis@gmail.com) - [Facebook](facebook.com)
