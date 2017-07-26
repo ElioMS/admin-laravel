@@ -44,11 +44,29 @@
     top: 100px !important;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+/*.collection {
+  position: fixed;
+}*/
 
-.group-img-input {
-  border: 1px solid #d1d1d1;
+.group-items {
+  border: 0.5px solid #d1d1d1;
+  min-height: 80px;
   margin-bottom: 10px;
+  padding-bottom: 15px;
   padding-top: 15px;
+  /*overflow:auto;*/
+  overflow: hidden;
+}
+
+.float-elements a {
+  color: #ccc !important;
+  float: right;
+  padding-top: 2px;
+  padding-right: 15px;
 }
 
 .btn-custom {
@@ -73,12 +91,6 @@
   color: #fff !important;
   background-color: #326c9e;
   text-decoration: none;
-}
-
-.float-elements a {
-  color: #ccc !important;
-  float: right;
-  padding-right: 8px;
 }
 
 .password-alert {
@@ -107,5 +119,10 @@
     color: #fff;
     background-color: #12afcb !important;
     border-color: #12afcb;
+}
+
+.form-title {
+  color: #333 !important;
+  font-size: 15px !important;
 }
 

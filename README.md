@@ -23,4 +23,4 @@
 * [Github](https://github.com/ElioMS/admin-laravel)
 * [Packagist](https://packagist.org/packages/emgs/admin-emgs-laravel)
 
-* [GMAIL](elio.garcia.solis@gmail.com) - [Facebook](facebook.com)
+* [Gmail](elio.garcia.solis@gmail.com) - [Facebook](facebook.com)

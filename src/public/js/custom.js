@@ -6,29 +6,26 @@ $(document).ready(function(){
     if (existsPossitiveMessage == 1) {
         positiveMessage.delay('5000').fadeOut('slow/5000/fast');
     }
+
+    // Enviar formulario
+    $("#submit-btn").click(function(){
+        $("#admin-form").submit();
+    });
+
+    //Datepicker
+      $('.date-picker').datepicker({
+             format: 'dd-mm-yyyy',
+             language: 'es',
+             autoclose: true,
+             orientation: "bottom"
+        });
 });
 
-// Enviar formulario
-$("#submit-btn").on('click' , function(){
-    $("#admin-form").submit();
-});
+
 
 //Cerrar modal preview imágenes
 $("#modal-regresar").on('click', function() {
     $("#modal-image").hide();
-});
-
-//Datepicker todas los campos de fecha con la clase .input-fecha
-$('.input-fecha').datepicker({
-      showOn: "button",
-      buttonImage: "{{ asset('calendar.gif') }}",
-      buttonImageOnly: false,
-      buttonText: "Select date"
-});
-
-$(".date-button-adm").on('click', function(e){
-    e.preventDefault();
-    $(".ui-datepicker-trigger").click();
 });
 
 $(document).ready(function(e) {
@@ -111,5 +108,5 @@ $(document).on('click', ".delete-flm" , function(e) {
 });
 
 $(document).on('click', '.icon-trash', function(e) {
-    $(this).closest('.group-img-input.row').remove()
+    $(this).closest('.group-items').remove()
 });

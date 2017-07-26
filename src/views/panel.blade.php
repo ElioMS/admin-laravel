@@ -15,8 +15,8 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/pace-master/themes/blue/pace-theme-flash.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/uniform/css/uniform.default.min.css') }}">
-        {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --}}
-        <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        {{-- <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/bootstrap/css/bootstrap.min.css') }}"> --}}
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/fontawesome/css/font-awesome.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/line-icons/simple-line-icons.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/offcanvasmenueffects/css/menu_cornerbox.css') }}">
@@ -34,19 +34,19 @@
         <!-- Theme Styles -->
         <link rel="stylesheet" href="{{ asset('vendor/ems/css/modern.css') }}">
         @if (Auth::user()->role->code == 1)
-            <link rel="stylesheet" href="{{ asset('vendor/ems/css/themes/blue.css') }}">
+            <link rel="stylesheet" href="{{ asset('vendor/ems/css/themes/red.css') }}">
             @else
             <link rel="stylesheet" href="{{ asset('vendor/ems/css/themes/red.css') }}">
         @endif
-        
+        {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css"> --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css">
         <link rel="stylesheet" href="{{ asset('vendor/ems/css/custom.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/3d-bold-navigation/js/modernizr.js') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/offcanvasmenueffects/js/snap.svg-min.js') }}">
 
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/colorpicker/bootstrap-colorpicker.css') }}">
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css">
-        
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+
         
         <style>
         .has-error .control-label,
@@ -69,7 +69,12 @@
         <![endif]-->
         
     </head>
-    <body class="page-header-fixed">
+
+    @php
+        $is_compact = config('app.compact_menu');
+    @endphp
+
+    <body class="page-header-fixed  @if ($is_compact) compact-menu @endif ">
         <div class="overlay"></div>
      
      {{--    <div class="menu-wrap">
@@ -232,7 +237,7 @@
                                              <li role="presentation"><a href="{{ route('user.profile') }}"><i class="fa fa-user"></i>Profile</a></li>
                                         @endif
 
-                                       <li role="presentation"><a href=""> <i class="fa fa-unlock-alt"></i> Cambiar contraseña </a> </li>
+                                       <li role="presentation"><a data-toggle="modal" data-target="#password-modal"> <i class="fa fa-unlock-alt"></i> Cambiar contraseña </a> </li>
                                         {{-- <li role="presentation"><a href="calendar.html"><i class="fa fa-calendar"></i>Calendar</a></li>
                                         <li role="presentation"><a href="inbox.html"><i class="fa fa-envelope"></i>Inbox<span class="badge badge-success pull-right">4</span></a></li> --}}
                                         {{-- <li role="presentation" class="divider"></li> --}}
@@ -286,7 +291,8 @@
         </main><!-- Page Content -->
        
         <div class="cd-overlay"></div>
-    
+        
+        @include('adminems::password')
         @include('adminems::modal')
         @include('adminems::delete')
         <!-- Javascripts -->
@@ -295,6 +301,7 @@
           src="https://code.jquery.com/jquery-3.2.1.js"
           integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
           crossorigin="anonymous"></script>
+
         <script src="{{ asset('vendor/ems/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.es.min.js"></script>
@@ -333,12 +340,36 @@
              $('#lfm').filemanager('image');
         </script>
     
-        <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
         
         <script>
             setTimeout(function(){
                 $('#table').DataTable({
+                    language: {
+                        "sProcessing":     "Procesando...",
+                        "sLengthMenu":     "Mostrar _MENU_ registros",
+                        "sZeroRecords":    "No se encontraron resultados",
+                        "sEmptyTable":     "Ningún dato disponible en esta tabla",
+                        "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                        "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+                        "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+                        "sInfoPostFix":    "",
+                        "sSearch":         "Buscar:",
+                        "sUrl":            "",
+                        "sInfoThousands":  ",",
+                        "sLoadingRecords": "Cargando...",
+                        "oPaginate": {
+                            "sFirst":    "Primero",
+                            "sLast":     "Último",
+                            "sNext":     "Siguiente",
+                            "sPrevious": "Anterior"
+                        },
+                        "oAria": {
+                            "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                            "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                        }
+                    },
                     "order": []
                 }); 
             }, 100);

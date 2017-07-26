@@ -212,7 +212,7 @@ $( document ).ready(function() {
             footerHeight = $('.page-footer').outerHeight(),
             pageContentHeight = $('.page-content').height();
         
-        content.attr('style', 'min-height:' + sidebar.height() + 'px !important');
+        // content.attr('style', 'min-height:' + sidebar.height() + 'px !important');
         
         if (body.hasClass('page-sidebar-fixed')) {
             height = sidebar.height() + footerHeight;
