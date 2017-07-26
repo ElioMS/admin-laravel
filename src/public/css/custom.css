@@ -36,9 +36,9 @@
   max-width: 291px;
 }
 
-.modal-backdrop {
+/*.modal-backdrop {
   z-index: 0 !important;
-}
+}*/
 
 .modal-content {
     top: 100px !important;

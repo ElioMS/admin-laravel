@@ -1500,9 +1500,9 @@ h5 {
 }
 
 .modal-content {
-    -webkit-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+/*    -webkit-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);*/
     border: 0;
     border-radius: 0;
 }
@@ -1550,7 +1550,7 @@ h5 {
 }
 
 .modal-backdrop {
-    z-index: 999999;
+    z-index: 999;
 }
 
 /* Pagination */
