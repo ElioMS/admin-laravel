@@ -2,18 +2,18 @@
 
 @section('content')
 
-	<a href="{{ route('categories.create') }}" type="a" class="btn btn-success pull-right btn-addon m-b-sm btn-rounded btn-md"><i class="fa fa-plus"></i> Add </a>
+	<a href="{{ route('users.create') }}" type="a" class="btn btn-success pull-right btn-addon m-b-sm btn-rounded btn-md"><i class="fa fa-plus"></i> Añadir nuevo </a>
 	<div class="col-md-12">
 		
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<h2 class="panel-title"> Categories </h2>
+				<h2 class="panel-title"> Usuarios </h2>
 			</div>
 
 			<div class="panel-body">
 				<table id="table" class="display table table-hover dataTable">
 					<thead>
-						<th> Name </th>
+						<th> Usuario </th>
 						<th> Rol </th>
 					</thead>
 
