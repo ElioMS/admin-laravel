@@ -3,7 +3,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"> Cambiar contraseña </h5>
+                    <h5 class="modal-title form-title" id="exampleModalLabel"> CAMBIAR CONTRASEÑA </h5>
                 </div>
 
                 <div class="modal-body">

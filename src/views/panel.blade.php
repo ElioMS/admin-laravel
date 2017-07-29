@@ -295,6 +295,8 @@
         @include('adminems::password')
         @include('adminems::modal')
         @include('adminems::delete')
+        @include('adminems::success')
+
         <!-- Javascripts -->
         {{-- <script src="{{ asset('vendor/ems/plugins/jquery/jquery-2.1.3.min.js') }}"></script> --}}
         <script
