@@ -224,7 +224,7 @@
                                             @if (Auth::user()->image)
                                                 <img class="img-circle avatar" src="{{ asset(Auth::user()->image) }}" width="40" height="40" alt="">
                                                 @else
-                                                <img class="img-circle avatar" src="{{ asset('user-icon.png') }}" width="40" height="40" alt="">
+                                                <img class="img-circle avatar" src="{{ asset('vendor/ems/user-icon.png') }}" width="40" height="40" alt="">
                                             @endif
                                         @endif
                                     </a>
