@@ -7,7 +7,7 @@
 		
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<h2 class="panel-title"> Usuarios </h2>
+				<h2 class="panel-title form-title"> Usuarios </h2>
 			</div>
 
 			<div class="panel-body">
@@ -33,8 +33,4 @@
 
 	</div>
 
-@stop
-
-@section('scripts')
-	@include('adminems::success')
 @stop

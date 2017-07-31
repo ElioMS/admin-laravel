@@ -29,8 +29,7 @@ class SeoController extends Controller
         ]);
 
         if ($seo) {
-            $seo->title = request('title');
-            $seo->description = request('description');
+            $seo->fill($request->all());
             $seo->save();
 
             session()->flash('success' , 'Información actualizada con exito');
@@ -39,19 +38,13 @@ class SeoController extends Controller
         } 
     }
 
-    static function saveNewRoute($path) {
-        SeoRoutes::create([
+    static function checkIfRouteExists($path) {
+        
+        $seo = SeoRoutes::create([
             'path' => $path
         ]);
-    }
 
-    static function checkIfRouteExists($path) {
-        $route = SeoRoutes::wherePath($path)->first();
-        if (!$route) {
-            self::saveNewRoute($path);
-            return true;
-        } else {
-            return false;
-        }
+        return $seo;
+
     }
 }
