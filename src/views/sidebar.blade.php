@@ -1,5 +1,6 @@
 @php
     $value = config('sidebar.menu');
+    $app = 0;
     $url = Route::currentRouteName();
     $prefix = explode('.' , $url);
 @endphp
