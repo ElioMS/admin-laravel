@@ -20,7 +20,7 @@
 					<tbody>
 						@foreach ($roles as $element)
 							<tr data-id="{{ $element->id }}">
-								<td> <a href="{{ route('roles.edit' , ['slug' => $element->slug]) }}"> {{ $element->name }} </a> </td>
+								<td> <a href="{{ route('roles.edit' , ['id' => $element->id]) }}"> {{ $element->name }} </a> </td>
 								{{-- <td> {{ $element->created_at }} </td> --}}
 							</tr>
 						@endforeach

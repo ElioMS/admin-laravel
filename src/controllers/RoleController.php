@@ -27,7 +27,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        return view('adminems::role.create');
     }
 
     /**
@@ -38,18 +38,10 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        Role::create($request->all());
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        session()->flash('success' , 'Rol creado con exito');
+        return redirect()->route('roles.index');
     }
 
     /**
@@ -60,7 +52,8 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $role = Role::find($id);
+        return view('adminems::role.edit', compact('role'));
     }
 
     /**
@@ -72,7 +65,12 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $role = Role::find($id);
+        $role->fill($request->all());
+        $role->save();
+
+        session()->flash('success' , 'Rol actualizado con exito');
+        return redirect()->route('roles.index');
     }
 
     /**
@@ -83,6 +81,9 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Role::destroy($id);
+
+        session()->flash('success' , 'Rol eliminado con exito');
+        return redirect()->route('roles.index');
     }
 }

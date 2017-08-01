@@ -8,22 +8,24 @@
     <div class="page-sidebar-inner slimscroll">
         <ul class="menu accordion-menu">
         @foreach ($value as $element)
-            @if ($element['type'] == 'simple')
-                @php
-                    $entity = explode('.' , $element['url']);
-                @endphp
-                <li class="@if ($prefix[0] == $entity[0]) active @endif"><a href="{{ route($element['url']) }}" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-{{ $element['ico'] }}"></span><p> {{ $element['text'] }} </p></a></li>
-            @else
-                <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-{{ $element['ico'] }}"></span><p> {{ $element['text'] }} </p><span class="arrow"></span></a>
-                    <ul class="sub-menu">
-                    @foreach ($element['childs'] as $elem)
-                        @php
-                            $entity = explode('.' , $elem['url']);
-                        @endphp
-                        <li class="child @if ($prefix[0] == $entity[0]) active @endif"><a href="{{ route($elem['url']) }}">{{ $elem['text'] }}</a></li>
-                    @endforeach 
-                    </ul>
-                </li>
+            @if (isset($element['type']))
+                @if ($element['type'] == 'simple')
+                    @php
+                        $entity = explode('.' , $element['url']);
+                    @endphp
+                    <li class="@if ($prefix[0] == $entity[0]) active @endif"><a href="{{ route($element['url']) }}" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-{{ $element['ico'] }}"></span><p> {{ $element['text'] }} </p></a></li>
+                @else
+                    <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-{{ $element['ico'] }}"></span><p> {{ $element['text'] }} </p><span class="arrow"></span></a>
+                        <ul class="sub-menu">
+                        @foreach ($element['childs'] as $elem)
+                            @php
+                                $entity = explode('.' , $elem['url']);
+                            @endphp
+                            <li class="child @if ($prefix[0] == $entity[0]) active @endif"><a href="{{ route($elem['url']) }}">{{ $elem['text'] }}</a></li>
+                        @endforeach 
+                        </ul>
+                    </li>
+                @endif
             @endif
         @endforeach
         </ul>
