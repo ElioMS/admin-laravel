@@ -16,9 +16,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $id = 1;
         $users = Admin::whereHas('role', function($q) use ($id) {
-            $q->where('code' , '!=' , $id);
+            $q->where('code' , '!=' , 1);
         })->get();
         // dd($users);
         return view('adminems::user.index', compact('users'));

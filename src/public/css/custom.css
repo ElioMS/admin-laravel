@@ -32,8 +32,8 @@
 .ic-img  {
   width: auto;
   height: auto;
-  max-height: 100px;
-  max-width: 291px;
+  max-height: 150px;
+  max-width: 150px;
 }
 
 /*.modal-backdrop {
@@ -124,5 +124,6 @@ ul {
 .form-title {
   color: #333 !important;
   font-size: 15px !important;
+  text-transform: uppercase;
 }
 

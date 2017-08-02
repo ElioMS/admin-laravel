@@ -13,15 +13,13 @@ $(document).ready(function(){
     });
 
     //Datepicker
-      $('.date-picker').datepicker({
-             format: 'dd-mm-yyyy',
-             language: 'es',
-             autoclose: true,
-             orientation: "bottom"
-        });
+    $('.date-picker').datepicker({
+        format: 'dd-mm-yyyy',
+        language: 'es',
+        autoclose: true,
+        orientation: "bottom"
+    });
 });
-
-
 
 //Cerrar modal preview imágenes
 $("#modal-regresar").on('click', function() {
