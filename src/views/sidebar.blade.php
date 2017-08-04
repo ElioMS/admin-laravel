@@ -1,6 +1,5 @@
 @php
     $value = config('sidebar.menu');
-    $app = 0;
     $url = Route::currentRouteName();
     $prefix = explode('.' , $url);
 @endphp
@@ -18,7 +17,7 @@
                 @else
                     <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-{{ $element['ico'] }}"></span><p> {{ $element['text'] }} </p><span class="arrow"></span></a>
                         <ul class="sub-menu">
-                        @foreach ($element['childs'] as $elem)
+                        @foreach ($element['children'] as $elem)
                             @php
                                 $entity = explode('.' , $elem['url']);
                             @endphp
