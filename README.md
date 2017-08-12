@@ -2,7 +2,7 @@
 ## Support
 
 * Laravel: 5.4 & 5.5 COMING SOON
-* PHP: >=5.6
+* PHP: 7.0
 
 ## Commands 
 
