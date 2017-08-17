@@ -14,17 +14,17 @@
 
                      {!! Form::open(['id' => 'f-change-password']) !!}
                         <div class="form-group">
-                            <label for=""> Contraseña actual</label>
+                            <label for=""> Contraseña actual <span class="required">*</span></label>
                             <input type="password" class="form-control" name="actual_password">
                         </div>
 
                         <div class="form-group">
-                            <label for=""> Nueva contraseña</label>
+                            <label for=""> Nueva contraseña <span class="required">*</span></label>
                             <input type="password" class="form-control" name="new_password">
                         </div>
 
                         <div class="form-group">
-                            <label for=""> Confirmar contraseña</label>
+                            <label for=""> Confirmar contraseña <span class="required">*</span></label>
                             <input type="password" class="form-control" name="new_password_confirmation">
                         </div>
                      {!! Form::close() !!}

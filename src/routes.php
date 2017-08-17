@@ -2,10 +2,12 @@
 
 $namespace = '\Ems\AdminEms\controllers';
 $middleware = \Config::get('lfm.middlewares');
-$user_mgm = 'auth';
 
-Route::group(['namespace' => $namespace , 'prefix' => 'admin', 'middleware' => $middleware], function ($user_mgm) {
-	Route::get('/panel' , 'AdminController@show')->name('panel');
+Route::group(['namespace' => $namespace , 'prefix' => 'admin', 'middleware' => $middleware], function () {
+	Route::get('/panel' , function() {
+		return view('admin.welcome');
+	})->name('panel');
+	
 	Route::any('/dropzone', 'DropzoneController@upload')->name('dropzone');
 
 	//Importante : seo_routes

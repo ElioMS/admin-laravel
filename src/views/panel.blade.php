@@ -61,23 +61,18 @@
             padding-top: 20px !important;
         }
         </style>
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
         
     </head>
 
     @php
         $is_compact = config('app.compact_menu');
+        $is_compact ? $class = 'compact-menu' : $class = '';
     @endphp
 
-    <body class="page-header-fixed  @if ($is_compact) compact-menu @endif ">
+    <body class="page-header-fixed  {{ $class }}">
         <div class="overlay"></div>
      
-     {{--    <div class="menu-wrap">
+        {{-- <div class="menu-wrap">
             <nav class="profile-menu">
                 <div class="profile"><img src="assets/images/avatar1.png" width="52" alt="David Green"/><span>David Green</span></div>
                 <div class="profile-menu-list">
@@ -218,8 +213,6 @@
                                         <span class="user-name">
                                         @if (Auth::check())
                                              {{ Auth::user()->name }} {{-- - Rol: {{ Auth::user()->role->name }} --}}
-                                        
-                                       
                                             <i class="fa fa-angle-down"></i></span>
                                             @if (Auth::user()->image)
                                                 <img class="img-circle avatar" src="{{ asset(Auth::user()->image) }}" width="40" height="40" alt="">

@@ -1,6 +1,6 @@
 {
     "name": "emgs/admin-emgs-laravel",
-    "description": "Laravel CMS",
+    "description": "Administrador de contenidos Laravel 5.4, desarrollado para STAFFCREATIVA.",
     "authors": [
         {
             "name": "Elio G. Solis",
@@ -17,6 +17,6 @@
             "Ems\\AdminEms\\": "/src"
         }
     },
-    "version": "1.0.3",
+    "version": "1.0.4",
     "license": "MIT"
 }
