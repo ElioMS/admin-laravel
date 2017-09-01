@@ -8,10 +8,10 @@
             </div>
 
             <div class="modal-body">
-                 Estas seguro de que deseas eliminar este registro.
+                 ¿Estás seguro de que deseas eliminar este registro?.
                  <input type="hidden" id="elemento-id" value="">
             </div>
-            
+
             <div class="modal-footer">
                 <button type="button" id="close-modal-dl" class="btn btn-basic" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-danger f-delete"> Eliminar </button>

@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+
         <!-- Title -->
-        <title> Admin | Panel</title>
-        
+        <title> Admin Panel </title>
+
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta charset="UTF-8">
         <meta name="description" content="Admin Dashboard Template"/>
         <meta name="keywords" content="admin,dashboard" />
 {{--         <meta name="author" content="Steelcoders" /> --}}
-        
+
         <!-- Styles -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/pace-master/themes/blue/pace-theme-flash.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/pace-master/themes/blue/pace-theme-flash.css') }}"> --}}
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/uniform/css/uniform.default.min.css') }}">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        {{-- <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/bootstrap/css/bootstrap.min.css') }}"> --}}
-        <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/fontawesome/css/font-awesome.css') }}">
+        {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --}}
+        <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/fontawesome/css/font-awesome.min.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/line-icons/simple-line-icons.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/offcanvasmenueffects/css/menu_cornerbox.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/waves/waves.min.css') }}">
@@ -29,25 +29,26 @@
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/toastr/toastr.min.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/metrojs/MetroJs.min.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/toastr/toastr.min.css') }}">
-        {{-- <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/datatables/css/jquery.datatables.min.css') }}">  --}}
-        {{-- <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/datatables/css/jquery.datatables_themeroller.css') }}">  --}}
+        <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/datatables/css/jquery.datatables.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/datatables/css/jquery.datatables_themeroller.css') }}">
+        <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/select2/css/select2.min.css') }}">
         <!-- Theme Styles -->
         <link rel="stylesheet" href="{{ asset('vendor/ems/css/modern.css') }}">
+        <link rel="stylesheet" href="{{ asset('vendor/ems/css/loader.css') }}">
         @if (Auth::user()->role->code == 1)
             <link rel="stylesheet" href="{{ asset('vendor/ems/css/themes/red.css') }}">
             @else
             <link rel="stylesheet" href="{{ asset('vendor/ems/css/themes/red.css') }}">
         @endif
-        {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css"> --}}
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css">
+
         <link rel="stylesheet" href="{{ asset('vendor/ems/css/custom.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/3d-bold-navigation/js/modernizr.js') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/offcanvasmenueffects/js/snap.svg-min.js') }}">
 
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/colorpicker/bootstrap-colorpicker.css') }}">
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
 
-        
         <style>
         .has-error .control-label,
         .has-error .help-block,
@@ -61,7 +62,7 @@
             padding-top: 20px !important;
         }
         </style>
-        
+
     </head>
 
     @php
@@ -71,7 +72,7 @@
 
     <body class="page-header-fixed  {{ $class }}">
         <div class="overlay"></div>
-     
+
         {{-- <div class="menu-wrap">
             <nav class="profile-menu">
                 <div class="profile"><img src="assets/images/avatar1.png" width="52" alt="David Green"/><span>David Green</span></div>
@@ -109,12 +110,12 @@
                     <div class="topmenu-outer">
                         <div class="top-menu">
                             <ul class="nav navbar-nav navbar-left">
-                                <li>        
+                                <li>
                                     <a href="javascript:void(0);" class="waves-effect waves-button waves-classic sidebar-toggle"><i class="fa fa-bars"></i></a>
                                 </li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                              {{--   <li>   
+                              {{--   <li>
                                     <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
                                 </li> --}}
                                {{--  <li class="dropdown">
@@ -225,7 +226,7 @@
                                         @php
                                             $value = config('app.show_profile');
                                         @endphp
-                                        
+
                                         @if ($value == 1)
                                              <li role="presentation"><a href="{{ route('user.profile') }}"><i class="fa fa-user"></i>Profile</a></li>
                                         @endif
@@ -262,29 +263,26 @@
                 @else
                 {{-- expr --}}
             @endif
-            
+
             <!-- Page Sidebar -->
             <div class="page-inner">
-                {{-- <div class="page-title">
-                    <h3>Dashboard</h3>
-                    <div class="page-breadcrumb">
-                        <ol class="breadcrumb">
-                            <li><a href="index.html">Home</a></li>
-                            <li class="active">Dashboard</li>
-                        </ol>
-                    </div>
-                </div> --}}
                 <div id="main-wrapper">
-                    @yield('content')
+                    <div class="loader">
+                        <div class="spinner">  </div>
+                        <span> Cargando...</span>
+                    </div>
+                    <div class="content">
+                        @yield('content')
+                    </div>
                 </div><!-- Main Wrapper -->
                 <div class="page-footer">
-                    <p class="no-s">2017 &copy; Laravel Admin v1.0.</p>
+                    <p class="no-s">2017 &copy; Laravel Admin v1.0.4</p>
                 </div>
             </div><!-- Page Inner -->
         </main><!-- Page Content -->
-       
+
         <div class="cd-overlay"></div>
-        
+
         @include('adminems::password')
         @include('adminems::modal')
         @include('adminems::delete')
@@ -293,14 +291,15 @@
         <!-- Javascripts -->
         {{-- <script src="{{ asset('vendor/ems/plugins/jquery/jquery-2.1.3.min.js') }}"></script> --}}
         <script
-          src="https://code.jquery.com/jquery-3.2.1.js"
-          integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
           crossorigin="anonymous"></script>
 
         <script src="{{ asset('vendor/ems/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+        <script src="{{ asset('vendor/ems/plugins/select2/js/select2.full.min.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.es.min.js"></script>
-        <script src="{{ asset('vendor/ems/plugins/pace-master/pace.min.js') }}"></script>
+        {{-- <script src="{{ asset('vendor/ems/plugins/pace-master/pace.min.js') }}"></script> --}}
         <script src="{{ asset('vendor/ems/plugins/jquery-blockui/jquery.blockui.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
@@ -321,23 +320,26 @@
         <script src="{{ asset('vendor/ems/plugins/flot/jquery.flot.tooltip.min.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/curvedlines/curvedLines.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/metrojs/MetroJs.min.js') }}"></script>
-        
+
         <script src="{{ asset('vendor/ems/js/modern.js') }}"></script>
         <script src="{{ asset('vendor/ems/js/custom.js') }}"></script>
         <script src="{{ asset('vendor/ems/js/pages/dashboard.js') }}"></script>
 
         <script src="{{ asset('vendor/ems/plugins/ckeditor/ckeditor.js') }}"></script>
-        <script src="{{ asset('vendor/ems/plugins/colorpicker/bootstrap-colorpicker.js') }}"></script>
+        <script src="{{ asset('vendor/ems/plugins/colorpicker/bootstrap-colorpicker.min.js') }}"></script>
 
         <script src="{{ asset('vendor/ems/js/lfm.js') }}"></script>
+
+
 
         <script>
              $('#lfm').filemanager('image');
         </script>
-    
-        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
-        
+        <script src="{{ asset('vendor/ems/plugins/datatables/js/jquery.datatables.min.js') }}"></script>
+
+        {{-- <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script> --}}
+        {{-- <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script> --}}
+
         <script>
             setTimeout(function(){
                 $('#table').DataTable({
@@ -366,9 +368,9 @@
                         }
                     },
                     "order": []
-                }); 
+                });
             }, 100);
-            
+
 
             $(document).on('click', '.preview-flm' ,function() {
                 var nombreImagen = $(this).data('name');

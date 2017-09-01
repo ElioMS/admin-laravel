@@ -3,10 +3,10 @@
 		setTimeout(function() {
 	        toastr.options = {
 	            closeButton: true,
-	            progressBar: true,
+	            progressBar: false,
 	            showMethod: 'fadeIn',
 	            hideMethod: 'fadeOut',
-	            timeOut: 5100
+	            timeOut: 4000
 	        };
 	        toastr.success("{{ $message }}", 'Success!');
 	    }, 0);
