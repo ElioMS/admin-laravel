@@ -276,7 +276,7 @@
                     </div>
                 </div><!-- Main Wrapper -->
                 <div class="page-footer">
-                    <p class="no-s">2017 &copy; Laravel Admin v1.0.4</p>
+                    <p class="no-s"> {{ Helper::actualYear() }} &copy; Laravel Admin v1.0.4</p>
                 </div>
             </div><!-- Page Inner -->
         </main><!-- Page Content -->
