@@ -1,10 +1,10 @@
-# LARAVEL CMS 
+# BASE LARAVEL
 ## Support
 
-* Laravel: 5.4 & 5.5 COMING SOON
+* Laravel: 5.4 & 5.5 WORKING
 * PHP: 7.0
 
-## Commands 
+## Commands
 
 * Run all migrations (IMPORTANT)
 
