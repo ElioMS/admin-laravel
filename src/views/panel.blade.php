@@ -26,7 +26,6 @@
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/slidepushmenus/css/component.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/weather-icons-master/css/weather-icons.min.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/metrojs/MetroJs.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/toastr/toastr.min.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/metrojs/MetroJs.min.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/toastr/toastr.min.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/datatables/css/jquery.datatables.min.css') }}">
@@ -282,12 +281,6 @@
         </main><!-- Page Content -->
 
         <div class="cd-overlay"></div>
-
-        @include('adminems::password')
-        @include('adminems::modal')
-        @include('adminems::delete')
-        @include('adminems::success')
-
         <!-- Javascripts -->
         {{-- <script src="{{ asset('vendor/ems/plugins/jquery/jquery-2.1.3.min.js') }}"></script> --}}
         <script
@@ -330,7 +323,10 @@
 
         <script src="{{ asset('vendor/ems/js/lfm.js') }}"></script>
 
-
+        @include('adminems::password')
+        @include('adminems::modal')
+        @include('adminems::delete')
+        @include('adminems::success')
 
         <script>
              $('#lfm').filemanager('image');
