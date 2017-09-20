@@ -314,6 +314,11 @@
         <script src="{{ asset('vendor/ems/plugins/curvedlines/curvedLines.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/metrojs/MetroJs.min.js') }}"></script>
 
+        @include('adminems::password')
+        @include('adminems::modal')
+        @include('adminems::delete')
+        @include('adminems::success')
+
         <script src="{{ asset('vendor/ems/js/modern.js') }}"></script>
         <script src="{{ asset('vendor/ems/js/custom.js') }}"></script>
         <script src="{{ asset('vendor/ems/js/pages/dashboard.js') }}"></script>
@@ -323,10 +328,6 @@
 
         <script src="{{ asset('vendor/ems/js/lfm.js') }}"></script>
 
-        @include('adminems::password')
-        @include('adminems::modal')
-        @include('adminems::delete')
-        @include('adminems::success')
 
         <script>
              $('#lfm').filemanager('image');
