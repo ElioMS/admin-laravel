@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 namespace Ems\AdminEms\controllers;
 
@@ -54,6 +54,9 @@ class DropzoneController extends Lfm
         }
 
         $new_filename  = $this->getNewName($file);
+        if (File::exists(parent::getCurrentPath($new_filename))) {
+           $new_filename = $this->getNewName($file, true);
+        }
         $new_file_path = parent::getCurrentPath($new_filename);
 
         event(new ImageIsUploading($new_file_path));
@@ -95,7 +98,7 @@ class DropzoneController extends Lfm
         $new_filename = $this->getNewName($file);
 
         if (File::exists(parent::getCurrentPath($new_filename))) {
-            return parent::error('file-exist');
+           $new_filename = $this->getNewName($file, true);
         }
 
         $mimetype = $file->getMimeType();
@@ -122,7 +125,7 @@ class DropzoneController extends Lfm
         return 'pass';
     }
 
-    private function getNewName($file)
+    private function getNewName($file, $bool = null)
     {
         $new_filename = parent::translateFromUtf8(trim(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)));
 
@@ -132,7 +135,13 @@ class DropzoneController extends Lfm
             $new_filename = preg_replace('/[^A-Za-z0-9\-\']/', '_', $new_filename);
         }
 
-        return $new_filename . '.' . $file->getClientOriginalExtension();
+        if ($bool) {
+            return time().$new_filename . '.' . $file->getClientOriginalExtension();
+        } else {
+            return $new_filename . '.' . $file->getClientOriginalExtension();
+        }
+
+
     }
 
     private function makeThumb($new_filename)
