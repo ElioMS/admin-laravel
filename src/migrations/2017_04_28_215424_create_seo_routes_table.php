@@ -16,11 +16,11 @@ class CreateSeoRoutesTable extends Migration
         Schema::create('seo_routes', function (Blueprint $table) {
             $table->increments('id');
             $table->text('path');
-            $table->string('title', 70)->nullable();
-            $table->string('description', 150)->nullable();
-            $table->string('social_title', 150)->nullable();
-            $table->string('social_description', 150)->nullable();
-            $table->string('social_imagen', 150)->nullable();
+            $table->string('title', 60)->nullable();
+            $table->string('description', 160)->nullable();
+            $table->string('social_title', 60)->nullable();
+            $table->string('social_description', 160)->nullable();
+            $table->text('social_imagen')->nullable();
         });
     }
 
