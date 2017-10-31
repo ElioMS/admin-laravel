@@ -3,7 +3,7 @@
 @section('content')
 
 	{!! Form::open(['route' => 'redirecciones.store', 'method' => 'POST' , 'id' => 'admin-form']) !!}
-		@include('redirecciones.forms.form')
+		@include('adminems::redirecciones.forms.form')
 	{!! Form::close() !!}
 
 	<div class="col-md-12">

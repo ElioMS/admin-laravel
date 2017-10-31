@@ -17,6 +17,6 @@
             "Ems\\AdminEms\\": "/src"
         }
     },
-    "version": "1.0.4",
+    "version": "dev-master",
     "license": "MIT"
 }
