@@ -319,6 +319,12 @@
         @include('adminems::delete')
         @include('adminems::success')
 
+        <script type="text/javascript">
+            $.ajaxSetup({
+                headers: { 'X-CSRF-Token' : "{{ csrf_token() }}" }
+            });
+        </script>
+
         <script src="{{ asset('vendor/ems/js/modern.js') }}"></script>
         <script src="{{ asset('vendor/ems/js/custom.js') }}"></script>
         <script src="{{ asset('vendor/ems/js/pages/dashboard.js') }}"></script>
