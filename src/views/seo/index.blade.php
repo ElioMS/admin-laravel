@@ -14,7 +14,7 @@
 						<th> URL </th>
 						<th> Título </th>
 						<th> Descripción </th>
-						<th width="100px;"> Acciones </th>
+						<th class="tbl-action-col"> Acciones </th>
 					</thead>
 
 					<tbody>
@@ -23,7 +23,7 @@
 								<td>  {{ $element->path }}  </td>
 								<td> {{ $element->title }} </td>
 								<td> {{ $element->description }} </td>
-								<td> <a href="{{ route('seo.edit' , ['id' => $element->id]) }}" class="btn btn-info" > <i class="fa fa-edit"></i> </a></td>
+								<td class="tbl-action-col"> <a href="{{ route('seo.edit' , ['id' => $element->id]) }}" class="btn btn-info" > <i class="fa fa-edit"></i> </a></td>
 							</tr>
 						@endforeach
 
