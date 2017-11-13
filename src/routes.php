@@ -20,7 +20,7 @@ Route::group(['namespace' => $namespace , 'prefix' => 'admin', 'middleware' => $
 
 	Route::group(['middleware' => 'users.mgm'] , function() {
 		//Profile
-		Route::resource('users', 'UserController');
+		Route::resource('usuarios', 'UserController');
 		Route::get('/profile' , 'UserController@profile')->name('user.profile');
 
 		//Roles
