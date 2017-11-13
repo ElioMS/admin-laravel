@@ -3,7 +3,7 @@
 @section('content')
 
 	<div class="col-md-12">
-		
+
 		<div class="panel panel-white">
 			<div class="panel-heading">
 				<h2 class="panel-title form-title"> Usuarios </h2>
@@ -25,12 +25,12 @@
 								<td> <strong> {{ $element->name }} </strong></td>
 								<td> <strong> {{ $element->created_at->format('d/m/Y') }} </strong> </td>
 								<td> <strong> {{ $element->updated_at->format('d/m/Y') }} </strong> </td>
-								<td class="tbl-action-col"> 
+								<td class="tbl-action-col">
 									<a href="{{ route('usuarios.edit' , ['id' => $element->id]) }}" class="btn btn-info"> <i class="fa fa-edit"></i> </a>
 								</td>
 							</tr>
 						@endforeach
-						
+
 					</tbody>
 				</table>
 			</div>
