@@ -16,17 +16,18 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = Admin::whereHas('role', function($q) use ($id) {
-            $q->where('code' , '!=' , 1);
-        })->get();
+        // $users = Admin::whereHas('role', function($q) use ($id) {
+        //     $q->where('code' , '!=' , 1);
+        // })->get();
+        $users = Admin::where('id', '!=', 1)->where('id', '!=', 2)->get();
         // dd($users);
-        return view('adminems::user.index', compact('users'));
+        return view('adminems::users.index', compact('users'));
     }
 
     public function profile() 
     {
         if (\Auth::user()) {
-            return view('adminems::user.profile');
+            return view('adminems::users.profile');
         } else {
             return false;
         }
@@ -96,7 +97,12 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        if (\Auth::user()->id == 1 || \Auth::user()->id == 2) {
+            return view('adminems::users.create');
+        }
+
+        return redirect()->route('panel');
+        
     }
 
     /**
@@ -107,7 +113,21 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request(), [
+            'name' => 'required|min:3|max:15',
+            'email' => 'required|email|unique:admins',
+            'password' => 'required|min:4'
+        ]);
+
+        Admin::create([
+            'name' => request('name'),
+            'email' => request('email'),
+            'password' => bcrypt(request('password')),
+            'role_id' => 1
+        ]);
+
+        session()->flash('success', 'Usuario registrado con éxito!');
+        return redirect()->route('usuarios.index');
     }
 
     /**
@@ -129,7 +149,12 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        if (\Auth::user()->id == 1 || \Auth::user()->id == 2) {
+            $user = Admin::find($id);
+            return view('adminems::users.edit', compact('user'));
+        }
+
+        return redirect()->route('panel');
     }
 
     /**
@@ -141,7 +166,20 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate(request(), [
+            'name' => 'required|min:3|max:15',
+            'email' => 'required|email',
+            'password' => 'required|min:4'
+        ]);
+
+        $user = Admin::find($id);
+        $user->name = request('name');
+        $user->email = request('email');
+        $user->password = bcrypt(request('password'));
+        $user->save();
+
+        session()->flash('success', 'Usuario actualizado con éxito!');
+        return redirect()->route('usuarios.index');
     }
 
     /**
@@ -152,6 +190,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Admin::destroy($id);
+        return redirect()->route('usuarios.index');
     }
 }

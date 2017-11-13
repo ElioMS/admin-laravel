@@ -34,8 +34,14 @@
         <!-- Theme Styles -->
         <link rel="stylesheet" href="{{ asset('vendor/ems/css/modern.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/css/loader.css') }}">
+
+        @php
+               $color = config('main.theme_color');
+               $theme = 'vendor/ems/css/themes/'.$color.'.css';
+        @endphp
+        
         @if (Auth::user()->role->code == 1)
-            <link rel="stylesheet" href="{{ asset('vendor/ems/css/themes/red.css') }}">
+            <link rel="stylesheet" href="{{ asset($theme) }}">
             @else
             <link rel="stylesheet" href="{{ asset('vendor/ems/css/themes/red.css') }}">
         @endif
@@ -65,7 +71,7 @@
     </head>
 
     @php
-        $is_compact = config('app.compact_menu');
+        $is_compact = config('main.compact_menu');
         $is_compact ? $class = 'compact-menu' : $class = '';
     @endphp
 
@@ -101,7 +107,7 @@
                         </a>
                     </div>
                     <div class="logo-box">
-                        <a href="{{ route('panel') }}" class="logo-text"><span> {{ config('app.site_name') }} </span></a>
+                        <a href="{{ route('panel') }}" class="logo-text"><span> {{ config('main.site_name') }} </span></a>
                     </div><!-- Logo Box -->
                     <div class="search-button">
                         <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
@@ -223,7 +229,7 @@
                                     </a>
                                     <ul class="dropdown-menu dropdown-list" role="menu">
                                         @php
-                                            $value = config('app.show_profile');
+                                            $value = config('main.show_admin_profile');
                                         @endphp
 
                                         @if ($value == 1)
