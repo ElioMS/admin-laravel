@@ -1,8 +1,8 @@
 # BASE LARAVEL
 ## Support
 
-* Laravel: 5.4 & 5.5 WORKING
-* PHP: 7.0
+* Laravel: 5.4 | 5.5 | 5.6
+* PHP: 7.0 | 7.1
 
 ## Commands
 
