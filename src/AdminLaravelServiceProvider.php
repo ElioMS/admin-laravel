@@ -23,6 +23,10 @@ class AdminLaravelServiceProvider extends ServiceProvider
         //     __DIR__.'/config/sidebar.php' => config_path('sidebar.php'),
         // ]);
 
+        $this->publishes([
+            __DIR__.'/views' => base_path('resources/views/vendor/ems')
+        ], 'emsviews');
+
         $this->loadMigrationsFrom(__DIR__.'/migrations');
     }
 
