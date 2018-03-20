@@ -3,15 +3,23 @@
     <head>
 
         <!-- Title -->
-        <title> Admin Panel </title>
+        <title> Administrador </title>
 
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta charset="UTF-8">
         <meta name="description" content="Admin Dashboard Template"/>
         <meta name="keywords" content="admin,dashboard" />
-{{--         <meta name="author" content="Steelcoders" /> --}}
-
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.css">
         <!-- Styles -->
+        <style type="text/css">
+            .lang-active {
+                color: #337ab7 !important;
+            }
+            .lang-active strong {
+                 text-decoration: underline;
+            }
+
+        </style>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
         {{-- <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/pace-master/themes/blue/pace-theme-flash.css') }}"> --}}
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/uniform/css/uniform.default.min.css') }}">
@@ -39,7 +47,7 @@
                $color = config('main.theme_color');
                $theme = 'vendor/ems/css/themes/'.$color.'.css';
         @endphp
-        
+
         @if (Auth::user()->role->code == 1)
             <link rel="stylesheet" href="{{ asset($theme) }}">
             @else
@@ -118,6 +126,21 @@
                                 <li>
                                     <a href="javascript:void(0);" class="waves-effect waves-button waves-classic sidebar-toggle"><i class="fa fa-bars"></i></a>
                                 </li>
+
+
+                                    @php
+                                        $languages = config('app.locales');
+                                        $multilanguage = config('main.multilanguage');
+                                    @endphp
+
+                                @if ($multilanguage)
+
+                                        @foreach ($languages as $lang => $el)
+                                            <li  style="display: inline;"> <a class="{{ app()->getLocale() == $lang ?  'lang-active' : '' }}"  href="{{ route('config.language', ['lang' => $lang]) }}"> <span class="flag-icon flag-icon-{{ $el['icon'] }}"></span> <strong> {{ $el['name'] }} </strong>   </a>  </li>
+                                        @endforeach
+
+                                @endif
+
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                               {{--   <li>
@@ -264,6 +287,7 @@
                 </div>
             </div><!-- Navbar -->
             @if (Auth::user()->role->code == 1)
+
                     @include('adminems::sidebar')
                 @else
                 {{-- expr --}}

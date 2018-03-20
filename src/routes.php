@@ -3,7 +3,7 @@
 $namespace = '\Ems\AdminEms\controllers';
 $middleware = \Config::get('lfm.middlewares');
 
-Route::group(['namespace' => $namespace , 'prefix' => 'admin', 'middleware' => $middleware], function () {
+Route::group(['namespace' => $namespace , 'prefix' => 'web-adm', 'middleware' => $middleware], function () {
 	Route::get('/panel' , function() {
 		return view('admin.welcome');
 	})->name('panel');
