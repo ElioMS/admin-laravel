@@ -48,11 +48,7 @@
                $theme = 'vendor/ems/css/themes/'.$color.'.css';
         @endphp
 
-        @if (Auth::user()->role->code == 1)
-            <link rel="stylesheet" href="{{ asset($theme) }}">
-            @else
-            <link rel="stylesheet" href="{{ asset('vendor/ems/css/themes/red.css') }}">
-        @endif
+        <link rel="stylesheet" href="{{ asset($theme) }}">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css">
 
