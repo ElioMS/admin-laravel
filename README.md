@@ -10,6 +10,7 @@ php artisan migrate
 
 # Publish assets (JS/CSS)
 php artisan vendor:publish --tag=public --force
+```
 
 ## Project
 * [Github](https://github.com/ElioMS/admin-laravel)
