@@ -1,7 +1,7 @@
 <?php
 
 $namespace = '\Ems\AdminEms\controllers';
-$middleware = \Config::get('lfm.middlewares');
+$middleware = \Config::get('main.middlewares');
 
 Route::group(['namespace' => $namespace , 'prefix' => 'web-adm', 'middleware' => $middleware], function () {
 	Route::get('/panel' , function() {
