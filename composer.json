@@ -1,9 +1,9 @@
 {
     "name": "emgs/admin-emgs-laravel",
-    "description": "Administrador de contenidos Laravel 5.5, desarrollado para STAFFCREATIVA.",
+    "description": "Base: Front-End (Styles, CSS, JS) - Back-End (Controllers, migrations)",
     "authors": [
         {
-            "name": "Elio G. Solis",
+            "name": "Elio Garcia Solis",
             "email": "elio.garcia.solis@gmail.com"
         }
     ],

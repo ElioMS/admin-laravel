@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
-{	
-
-	public function __construct() {
+{
+	public function __construct()
+	{
 		$this->middleware('auth:admin');
 	}
 
-    public function show() {
+    public function show()
+    {
     	return view('adminems::panel');
     }
 }
