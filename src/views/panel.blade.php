@@ -305,7 +305,7 @@
                     </div>
                 </div><!-- Main Wrapper -->
                 <div class="page-footer">
-                    <p class="no-s"> <strong> Copyright </strong>&copy; {{ Helper::actualYear() }}  <a href="http://www.staffcreativa.pe/" target="_blank"><strong>Staffcreativa</strong></a>. Todos los derechos reservados.</p>
+                    {{-- <p class="no-s"> <strong> Copyright </strong>&copy; {{ Helper::actualYear() }}  <a href="http://www.staffcreativa.pe/" target="_blank"><strong>Staffcreativa</strong></a>. Todos los derechos reservados.</p> --}}
                 </div>
             </div><!-- Page Inner -->
         </main><!-- Page Content -->
