@@ -21,11 +21,11 @@ Route::group(['namespace' => $namespace , 'prefix' => 'web-adm', 'middleware' =>
 	Route::group(['middleware' => 'users.mgm'] , function() {
 		//Profile
 //		Route::resource('usuarios', 'UserController');
-		Route::get('/profile' , 'UserController@profile')->name('user.profile');
-		Route::resource('roles', 'RoleController');
+		// Route::get('/profile' , 'UserController@profile')->name('user.profile');
+		// Route::resource('roles', 'RoleController');
 	});
 
-	Route::any('/change-password' , 'UserController@changePassword')->name('user.changePassword');
-	Route::post('/profile/save' , 'UserController@saveProfile')->name('save.profile');
+	// Route::any('/change-password' , 'UserController@changePassword')->name('user.changePassword');
+	// Route::post('/profile/save' , 'UserController@saveProfile')->name('save.profile');
 
 });
