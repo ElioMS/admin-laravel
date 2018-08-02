@@ -10,7 +10,7 @@ Route::group(['namespace' => $namespace , 'prefix' => 'web-adm', 'middleware' =>
 
 	Route::resource('redirecciones', 'RedirectController');
 
-	Route::any('/dropzone', 'DropzoneController@upload')->name('dropzone');
+	// Route::any('/dropzone', 'DropzoneController@upload')->name('dropzone');
 
 	//Importante : seo_routes
 	Route::get('/seo', 'SeoController@index')->name('seo.index');
