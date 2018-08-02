@@ -4,12 +4,12 @@
 
         <!-- Title -->
         <title> Administrador </title>
-
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta charset="UTF-8">
         <meta name="description" content="Admin Dashboard Template"/>
         <meta name="keywords" content="admin,dashboard" />
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.css">
+        {{-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.css"> --}}
         <!-- Styles -->
         <style type="text/css">
             .lang-active {
@@ -29,7 +29,7 @@
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/line-icons/simple-line-icons.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/offcanvasmenueffects/css/menu_cornerbox.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/waves/waves.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/switchery/switchery.min.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/switchery/switchery.min.css') }}"> --}}
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/3d-bold-navigation/css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/slidepushmenus/css/component.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/weather-icons-master/css/weather-icons.min.css') }}">
@@ -38,7 +38,7 @@
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/toastr/toastr.min.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/datatables/css/jquery.datatables.min.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/datatables/css/jquery.datatables_themeroller.css') }}">
-        <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/select2/css/select2.min.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/select2/css/select2.min.css') }}"> --}}
         <!-- Theme Styles -->
         <link rel="stylesheet" href="{{ asset('vendor/ems/css/modern.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/css/loader.css') }}">
@@ -50,13 +50,13 @@
 
         <link rel="stylesheet" href="{{ asset($theme) }}">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css">
+        {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css"> --}}
 
         <link rel="stylesheet" href="{{ asset('vendor/ems/css/custom.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/3d-bold-navigation/js/modernizr.js') }}">
         <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/offcanvasmenueffects/js/snap.svg-min.js') }}">
 
-        <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/colorpicker/bootstrap-colorpicker.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('vendor/ems/plugins/colorpicker/bootstrap-colorpicker.css') }}"> --}}
 
         <style>
         .has-error .control-label,
@@ -311,14 +311,14 @@
           crossorigin="anonymous"></script>
 
         <script src="{{ asset('vendor/ems/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
-        <script src="{{ asset('vendor/ems/plugins/select2/js/select2.full.min.js') }}"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.es.min.js"></script>
+        {{-- <script src="{{ asset('vendor/ems/plugins/select2/js/select2.full.min.js') }}"></script> --}}
+        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.es.min.js"></script> --}}
         {{-- <script src="{{ asset('vendor/ems/plugins/pace-master/pace.min.js') }}"></script> --}}
         <script src="{{ asset('vendor/ems/plugins/jquery-blockui/jquery.blockui.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
-        <script src="{{ asset('vendor/ems/plugins/switchery/switchery.min.js') }}"></script>
+        {{-- <script src="{{ asset('vendor/ems/plugins/switchery/switchery.min.js') }}"></script> --}}
         <script src="{{ asset('vendor/ems/plugins/uniform/jquery.uniform.min.js') }}"></script>
         <script src="{{ asset('vendor/ems/plugins/offcanvasmenueffects/js/classie.js') }}"></script>
         {{-- <script src="{{ asset('vendor/ems/plugins/offcanvasmenueffects/js/main.js') }}"></script> --}}
@@ -352,7 +352,7 @@
         <script src="{{ asset('vendor/ems/js/pages/dashboard.js') }}"></script>
 
         <script src="{{ asset('vendor/ems/plugins/ckeditor/ckeditor.js') }}"></script>
-        <script src="{{ asset('vendor/ems/plugins/colorpicker/bootstrap-colorpicker.min.js') }}"></script>
+{{--         <script src="{{ asset('vendor/ems/plugins/colorpicker/bootstrap-colorpicker.min.js') }}"></script> --}}
 
         <script src="{{ asset('vendor/ems/js/lfm.js') }}"></script>
 
