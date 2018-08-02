@@ -282,12 +282,8 @@
                     </div>
                 </div>
             </div><!-- Navbar -->
-            @if (Auth::user()->role->code == 1)
 
-                    @include('adminems::sidebar')
-                @else
-                {{-- expr --}}
-            @endif
+            @include('adminems::sidebar')
 
             <!-- Page Sidebar -->
             <div class="page-inner">
