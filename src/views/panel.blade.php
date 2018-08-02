@@ -292,7 +292,7 @@
                         <div class="spinner">  </div>
                         <span> Cargando...</span>
                     </div>
-                    <div class="content">
+                    <div class="content" id="app">
                         @yield('content')
                     </div>
                 </div><!-- Main Wrapper -->
